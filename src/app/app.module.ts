@@ -13,16 +13,27 @@ import { environment } from '../environments/environment';
 
 import { EstadioService } from './servicios/estadio.service';
 import { ConciertoService } from './servicios/concierto.service';
+import { LoginService } from './servicios/login.service';
+import { ClienteService } from './servicios/cliente.service';
 
 // Modulo de ANGULAR MATERIAL.
 import { MaterialModule } from './modulos/material/material.module';
 // import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 import { EstadioComponent } from './componentes/estadio/estadio.component';
 import { ConciertoComponent } from './componentes/concierto/concierto.component';
+<<<<<<< HEAD
 import { DialogoComponent } from './componentes/dialogo/dialogo.component';
 import { DialogoListaUsuariosComponent } from './componentes/dialogo-lista-usuarios/dialogo-lista-usuarios.component';
+=======
+import { LoginComponent } from './componentes/login/login.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ClientesComponent } from './componentes/clientes/clientes.component';
+import { CrearClientesComponent } from './componentes/crear-clientes/crear-clientes.component';
+>>>>>>> e19faa2ba313d307d8a8ee83dea44e97366bc10e
  
 @NgModule({
   declarations: [
@@ -30,8 +41,15 @@ import { DialogoListaUsuariosComponent } from './componentes/dialogo-lista-usuar
     BarraSuperiorComponent,
     EstadioComponent,
     ConciertoComponent,
+<<<<<<< HEAD
     DialogoComponent,
     DialogoListaUsuariosComponent,
+=======
+    LoginComponent,
+    RegistroComponent,
+    ClientesComponent,
+    CrearClientesComponent,
+>>>>>>> e19faa2ba313d307d8a8ee83dea44e97366bc10e
   ],
   imports: [
     BrowserModule,
@@ -40,11 +58,11 @@ import { DialogoListaUsuariosComponent } from './componentes/dialogo-lista-usuar
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,    
-    // ReactiveFormsModule,
-    // FormsModule,
+    ReactiveFormsModule,
+    FormsModule,
 
   ],
-  providers: [EstadioService, ConciertoService],
+  providers: [EstadioService, ConciertoService, LoginService, ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
