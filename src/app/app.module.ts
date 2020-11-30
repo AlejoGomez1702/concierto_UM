@@ -21,6 +21,8 @@ import { MaterialModule } from './modulos/material/material.module';
 
 import { EstadioComponent } from './componentes/estadio/estadio.component';
 import { ConciertoComponent } from './componentes/concierto/concierto.component';
+import { DialogoComponent } from './componentes/dialogo/dialogo.component';
+import { DialogoListaUsuariosComponent } from './componentes/dialogo-lista-usuarios/dialogo-lista-usuarios.component';
  
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ConciertoComponent } from './componentes/concierto/concierto.component'
     BarraSuperiorComponent,
     EstadioComponent,
     ConciertoComponent,
+    DialogoComponent,
+    DialogoListaUsuariosComponent,
   ],
   imports: [
     BrowserModule,

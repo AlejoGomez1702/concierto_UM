@@ -77,6 +77,9 @@ export class EstadioService
   }
 
 
+  actualizarAsiento(id,estado){
+    return this.firestore.collection('asientos').doc(id).set({ocupado: estado}, {merge: true});
+  }
 
 
 

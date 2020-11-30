@@ -4,10 +4,10 @@
       {{gradaNorte.text}}
 
       <div class="grid-container">
-        <ng-container *ngFor="let asiento of asientos;index as i">
+        <ng-container *ngFor="let asiento of asientos">
           <ng-container *ngIf="asiento.ubicacion == 'norte'">
             <button             
-                (click)="comprarBoleta(i)" 
+                (click)="escojerCompra(asiento)" 
                 mat-raised-button 
                 [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
                 class="grid-item">
@@ -23,10 +23,10 @@
       {{gradaOccidental.text}}
 
       <div class="grid-container-occ">
-        <ng-container *ngFor="let asiento of asientos;index as i">
+        <ng-container *ngFor="let asiento of asientos">
           <ng-container *ngIf="asiento.ubicacion == 'occidente'">
             <button      
-                (click)="comprarBoleta(i)"       
+                (click)="escojerCompra(asiento)"       
                 mat-raised-button 
                 [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
                 class="grid-item">
@@ -44,10 +44,10 @@
       {{gradaOriental.text}}
 
       <div class="grid-container-occ">
-        <ng-container *ngFor="let asiento of asientos;index as i">
+        <ng-container *ngFor="let asiento of asientos">
           <ng-container *ngIf="asiento.ubicacion == 'oriente'">
             <button             
-                (click)="comprarBoleta(i)" 
+                (click)="escojerCompra(asiento)" 
                 mat-raised-button 
                 [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
                 class="grid-item">
@@ -63,10 +63,10 @@
       {{gradaSur.text}}
 
       <div class="grid-container">
-        <ng-container *ngFor="let asiento of asientos;index as i">
+        <ng-container *ngFor="let asiento of asientos">
           <ng-container *ngIf="asiento.ubicacion == 'sur'">
             <button          
-                (click)="comprarBoleta(i)"    
+                (click)="escojerCompra(asiento)"    
                 mat-raised-button 
                 [color]="asiento.ocupado == 0 ? 'primary' : asiento.ocupado == 1 ? 'accent' : 'warn'" 
                 class="grid-item">
