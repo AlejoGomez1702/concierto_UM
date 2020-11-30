@@ -18,26 +18,42 @@ export class ConciertoComponent implements OnInit
 {
   public nombre = '';
 
-  public conciertos: Concierto[] = [];
+  public conciertos: Concierto[] = [{
+      id: "1",
+      nombre: "",
+      descripcion: "",
+      dia: 1
+    },{
+      id: "2",
+      nombre: "",
+      descripcion: "",
+      dia: 2, 
+      descuento: 1000
+    }];
 
   constructor(
     private conciertoServicio: ConciertoService
   ) 
   { 
     this.obtenerConciertos();
+    console.log('Listado de conciertos');
+    console.log(this.conciertos);
   }
 
   ngOnInit(): void 
   {
-    this.obtenerConciertos();
+    // this.obtenerConciertos();
   }
 
   async obtenerConciertos()
   {
+    let id = 0;
+    // this.conciertos = [];
     await this.conciertoServicio.obtenerConciertos().subscribe((conciertos) => {
       conciertos.forEach((concierto) => {
         // console.log(<Asiento>asiento.data());
-        this.conciertos.push(<Concierto>concierto.data());
+        this.conciertos.splice(id, id, <Concierto>concierto.data());
+        id ++;
       })
     });
   }
@@ -46,11 +62,11 @@ export class ConciertoComponent implements OnInit
   {
     console.log(this.conciertos);
     console.log(this.nombre);
-    // const concierto = this.conciertos[index];
-    // const id: string = (index + 1) + '';
-    // this.conciertoServicio.editarConcierto(id, concierto).then(
-    //   () => {console.log('Se Edito bien');}
-    // ).catch(() => console.log('Error editando'));
+    const concierto = this.conciertos[index];
+    const id: string = (index + 1) + '';
+    this.conciertoServicio.editarConcierto(id, concierto).then(
+      () => {console.log('Se Edito bien');}
+    ).catch(() => console.log('Error editando'));
   }
 
 }

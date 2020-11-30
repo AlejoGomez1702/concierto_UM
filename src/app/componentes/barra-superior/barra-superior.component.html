@@ -1,11 +1,11 @@
 <p>
   <mat-toolbar color="primary">
-      <span>SISTEMA CONCIERTO</span>
+      <span [routerLink]="['/']">SISTEMA CONCIERTO</span>
       <span style="margin-left: 20px;"></span>
       <!-- <button mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button> -->
-      <button mat-icon-button (click)="iniciarVentas()">
+      <!-- <button mat-icon-button (click)="iniciarVentas()">
         iniciar
         <mat-icon>flag</mat-icon>
       </button>
@@ -15,13 +15,20 @@
       <button mat-icon-button>
         Obtener
         <mat-icon>flag</mat-icon>
-      </button>
+      </button> -->
 
       <span style="margin-left: 40px;"></span>
 
       <button mat-icon-button [routerLink]="['/concierto']">
         Editar Concierto
         <mat-icon>tour</mat-icon>
+      </button>
+
+      <span style="margin-left: 150px;"></span>
+
+      <button mat-icon-button [routerLink]="['/clientes']">
+        Clientes
+        <mat-icon>face</mat-icon>
       </button>
 
 
